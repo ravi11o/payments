@@ -1,0 +1,8 @@
+<div class="jumbotron">
+  <h3>Amount to pay: $<%= @amount %></h3>
+  <%= form_for @conn, page_path(@conn, :confirm_payment), fn f -> %>
+    <%= hidden_input f, :payment_id, value: @id %>
+    <%= submit "Confirm Payment", class: "btn btn-lg btn-primary" %>
+    <%= link "Decline", to: page_path(@conn, :index), class: "btn btn-secondary btn-danger"%>
+  <% end %>
+</div>

@@ -1,0 +1,7 @@
+<div class="jumbotron">
+  <h3>Payment Successful!!</h3>
+  <h4>Email: <%= @details.email %></h4>
+  <h5>Credit Card : **** **** **** <%= @details.last4 %></h5>
+  <h5>Amount: $<%= @details.amount %></h5>
+  <h5>Zip Code: <%= @details.zip %></h5>
+</div>
