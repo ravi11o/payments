@@ -26,7 +26,8 @@ defmodule PaymentsWeb.PageController do
   end
   def confirm_payment(conn, %{"payment_id" => id}) do
     case StripePost.capture(id) do
-      {200, %{"source" => %{"name" => email, "address_zip" => zip, "last4" => last4}, "amount" => amount}} ->
+      {200, %{"source" => %{"name" => email, "address_zip" => zip, "last4" => last4}, "amount" => amount} = params} ->
+        IO.inspect params
         amount_in_usd = div(amount, 100)
         details = %{email: email, zip: zip, last4: last4, amount: amount_in_usd}
 

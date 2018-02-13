@@ -1,0 +1,6 @@
+#### Basic information for creating payment Gateway using Stripe
+1. Create a stripe account.
+  -- 2 apis are present i.e 1 set of private and public keys each for testing
+   and production(live transaction).
+
+   We use test api to test the gateway.
